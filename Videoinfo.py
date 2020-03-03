@@ -80,7 +80,9 @@ for i in bofang_0:
     
 bofang = bofang[index_list]
 dianzan = dianzan[index_list]
-    
+pinglun = pinglun[index_list]
+fenxiang = fenxiang[index_list]
+
 
 # =============================================================================
 # #####发布时间
@@ -174,4 +176,4 @@ ax.set_ylim(500,1.5e5)
 ax.scatter(x, y)
 fig.tight_layout()
 #plt.show()
-fig.savefig('dianzan_bofang_0.png', dpi=500)
+fig.savefig('dianzan_bofang_0.png', dpi=100)
