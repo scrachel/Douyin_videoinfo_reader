@@ -71,6 +71,17 @@ def read_Douyin_videoinfo(file_name):
 file_name = r'C:\\Users\Scrachel\.spyder\Video_info.txt'
 bofang, dianzan, fenxiang, pinglun, biaoti, release_time = \
     read_Douyin_videoinfo(file_name=file_name)
+    
+#####处理数据重复问题  假设不存在更复杂的重复性，即同一播放量只对应同一视频
+bofang_0 = np.unique(bofang)
+index_list = []
+for i in bofang_0:
+    index_list.append(np.argwhere(bofang==i)[0][0])
+    
+bofang = bofang[index_list]
+dianzan = dianzan[index_list]
+    
+
 # =============================================================================
 # #####发布时间
 # fig, ax = plt.subplots(figsize=(8,5))
